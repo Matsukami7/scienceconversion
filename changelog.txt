@@ -1,15 +1,19 @@
 Welcome to the Science Conversion Mod
 Author : Narokuu
-Twitter: @narokuu
+Discord: narokuu
 Contact: Contact me in the factorio discord, or on twitter If you use this mod in a video or on stream,
 Provide a link here instead of a download link.
 
 Please contact me if you want to edit or make changes to this mod.
 
-Special Thanks: A very special thanks to: Darthun, for guiding me through my first mod, and creating the art used for the mod. Justarandomgeek, 
-and other members of the modding community, for the tireless questions and help. And a huge thanks to the entire factorio dev team. for making this game
+Special Thanks: A very special thanks to: Darthun, for guiding me through my first mod, So many years ago, and helping  create the original art used for the mod. Justarandomgeek, 
+and other members of the modding community, for the tireless questions and help. And a huge thanks to the entire factorio dev team. For making this game
 amazing, and what it is today!
 
+------------------------------------------------------------------
+Version: 2.0
+Date: 07/05/2025
+    Info: Updated to 2.0.58 "Space Age"
 --------------------------------------------------------------------------
 Version: 1.1.0
 Date: 5/20/2022

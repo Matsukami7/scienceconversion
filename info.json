@@ -1,10 +1,10 @@
 {"name": "ScienceConversion",
-"version": "1.2.0",
+"version": "2.0",
 "title": "Science Conversion",
 "author": "narokuu",
 "contact": "Discord: Narokuu", 
-"homepage": "",
-"factorio_version": "1.1",
-"dependencies": ["base >= 1.1.59"],
-"description":"This mod allows the ability to convert science packs into one another, Up and down a tier! Including space science!"
+"homepage": "narokuu.blog",
+"factorio_version": "2.0",
+"dependencies": ["base >= 2.0"],
+"description":"This mod allows the ability to convert science packs into one another, Up and down a tier! Including space age sciences!"
 }

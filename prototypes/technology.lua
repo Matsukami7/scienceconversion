@@ -113,27 +113,32 @@ data:extend({
 },
 {
   type = "technology",
-  name = "all-to-space",
-  icon = "__ScienceConversion__/graphics/science-conversion-tech2.png",
+  name = "science-conversion-five",
+  icon = "__ScienceConversion__/graphics/white_to_orange_exchange.png",
   icon_size = 128,
   effects =
   {   
     {
         type = "unlock-recipe",
-        recipe = "all-to-space"
-    }    
+        recipe = "white-to-orange"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "orange-to-white"
+    }        
   },
   prerequisites = {"space-science-pack", "science-conversion-four"},
   unit =
   {
-    count = 400,
+    count = 500,
     ingredients =
     {
       {"production-science-pack", 1},
       {"utility-science-pack", 1},
       {"chemical-science-pack", 1},
       {"logistic-science-pack", 1},
-      {"automation-science-pack", 1}
+      {"automation-science-pack", 1},
+      {"space-science-pack", 1}
     },
     time = 30
   }
