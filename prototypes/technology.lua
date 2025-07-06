@@ -142,5 +142,37 @@ data:extend({
     },
     time = 30
   }
+},
+{
+  type = "technology",
+  name = "science-conversion-six",
+  icon = "__ScienceConversion__/graphics/white_to_pink_exchange.png",
+  icon_size = 128,
+  effects =
+  {   
+    {
+        type = "unlock-recipe",
+        recipe = "white-to-pink"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "pink-to-white"
+    }        
+  },
+  prerequisites = {"space-science-pack", "science-conversion-four"},
+  unit =
+  {
+    count = 500,
+    ingredients =
+    {
+      {"production-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"logistic-science-pack", 1},
+      {"automation-science-pack", 1},
+      {"space-science-pack", 1}
+    },
+    time = 30
+  }
 }
   })

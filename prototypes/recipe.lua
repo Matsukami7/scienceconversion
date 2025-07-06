@@ -53,7 +53,7 @@ data:extend({
       energy_required = 10,
       enabled = false,
       ingredients = {
-        {type = "item", name = "chemical-science-pack", amount = 100}
+        {type = "item", name = "chemical-science-pack", amount = 30}
       },
       results = {
         {type = "item", name = "production-science-pack", amount = 1}
@@ -77,7 +77,7 @@ data:extend({
       energy_required = 10,
       enabled = false,
       ingredients = {
-        {type = "item", name = "production-science-pack", amount = 150}
+        {type = "item", name = "production-science-pack", amount = 50}
       },
       results = {
         {type = "item", name = "utility-science-pack", amount = 1}
@@ -118,5 +118,29 @@ data:extend({
       results = {
         {type = "item", name = "space-science-pack", amount = 1}
       }
-    }
+    },
+    {
+      type = "recipe",
+      name = "white-to-pink",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "space-science-pack", amount = 100}
+      },
+      results = {
+        {type = "item", name = "electromagnetic-science-pack", amount = 1}
+      }
+    },
+    {
+      type = "recipe",
+      name = "pink-to-white",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "electromagnetic-science-pack", amount = 1}
+      },
+      results = {
+        {type = "item", name = "space-science-pack", amount = 1}
+      }
+    }  
 })
