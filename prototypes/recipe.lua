@@ -142,5 +142,29 @@ data:extend({
       results = {
         {type = "item", name = "space-science-pack", amount = 1}
       }
-    }  
+    },
+    {
+      type = "recipe",
+      name = "white-to-lime",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "space-science-pack", amount = 100}
+      },
+      results = {
+        {type = "item", name = "agricultural-science-pack", amount = 1}
+      }
+    },
+    {
+      type = "recipe",
+      name = "lime-to-white",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "agricultural-science-pack", amount = 1}
+      },
+      results = {
+        {type = "item", name = "space-science-pack", amount = 1}
+      }
+    }
 })
