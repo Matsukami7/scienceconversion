@@ -156,5 +156,57 @@ data:extend({
             },
             time = 30
         }
+    },
+    {
+        type = "technology",
+        name = "science-conversion-eight",
+        icon = "__ScienceConversion__/graphics/white-to-dark-blue-exchange.png",
+        icon_size = 128,
+        effects = {
+            { type = "unlock-recipe", recipe = "white-to-dark-blue" },
+            { type = "unlock-recipe", recipe = "dark-blue-to-white" }
+        },
+        prerequisites = {
+            "space-science-pack",
+            "science-conversion-four"
+        },
+        unit = {
+            count = 1000,
+            ingredients = {
+                { "production-science-pack", 1 },
+                { "utility-science-pack", 1 },
+                { "chemical-science-pack", 1 },
+                { "logistic-science-pack", 1 },
+                { "automation-science-pack", 1 },
+                { "space-science-pack", 1 }
+            },
+            time = 30
+        }
+    },
+    {
+        type = "technology",
+        name = "science-conversion-nine",
+        icon = "__ScienceConversion__/graphics/white_to_black_exchange.png",
+        icon_size = 128,
+        effects = {
+            { type = "unlock-recipe", recipe = "white-to-black" },
+            { type = "unlock-recipe", recipe = "black-to-white" }
+        },
+        prerequisites = {
+            "space-science-pack",
+            "science-conversion-four"
+        },
+        unit = {
+            count = 2000,
+            ingredients = {
+                { "production-science-pack", 1 },
+                { "utility-science-pack", 1 },
+                { "chemical-science-pack", 1 },
+                { "logistic-science-pack", 1 },
+                { "automation-science-pack", 1 },
+                { "space-science-pack", 1 }
+            },
+            time = 30
+        }
     }
 })

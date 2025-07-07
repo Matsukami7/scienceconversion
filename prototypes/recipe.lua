@@ -166,5 +166,53 @@ data:extend({
       results = {
         {type = "item", name = "space-science-pack", amount = 1}
       }
+    },
+    {
+      type = "recipe",
+      name = "white-to-dark-blue",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "space-science-pack", amount = 100}
+      },
+      results = {
+        {type = "item", name = "cryogenic-science-pack", amount = 1}
+      }
+    },
+    {
+      type = "recipe",
+      name = "dark-blue-to-white",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "cryogenic-science-pack", amount = 1}
+      },
+      results = {
+        {type = "item", name = "space-science-pack", amount = 1}
+      }
+    },
+    {
+      type = "recipe",
+      name = "white-to-black",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "space-science-pack", amount = 100}
+      },
+      results = {
+        {type = "item", name = "promethium-science-pack", amount = 1}
+      }
+    },
+    {
+      type = "recipe",
+      name = "black-to-white",
+      energy_required = 10,
+      enabled = false,
+      ingredients = {
+        {type = "item", name = "promethium-science-pack", amount = 1}
+      },
+      results = {
+        {type = "item", name = "space-science-pack", amount = 1}
+      }
     }
 })
