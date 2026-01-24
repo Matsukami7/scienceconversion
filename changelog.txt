@@ -11,6 +11,12 @@ and other members of the modding community, for the tireless questions and help.
 amazing, and what it is today!
 
 ------------------------------------------------------------------
+Version: 2.1.0
+Date: 01/23/2026
+    Info: Updated for Factorio 2.0.73 compatibility
+    - Verified compatibility with latest stable Factorio version (2.0.73)
+    - No API changes required - mod fully compatible with Factorio 2.0.x
+--------------------------------------------------------------------------
 Version: 2.0
 Date: 07/05/2025
     Info: Updated to 2.0.58 "Space Age"
