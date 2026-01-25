@@ -48,6 +48,22 @@ data:extend({
         order = "e"
     },
     
+    -- Bidirectional toggles
+    {
+        type = "bool-setting",
+        name = "science-conversion-enable-upgrades",
+        setting_type = "startup",
+        default_value = true,
+        order = "e-a"
+    },
+    {
+        type = "bool-setting",
+        name = "science-conversion-enable-downgrades",
+        setting_type = "startup",
+        default_value = true,
+        order = "e-b"
+    },
+    
     -- Tier-specific toggles
     {
         type = "bool-setting",

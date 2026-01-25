@@ -15,7 +15,7 @@ After researching the requiremnts in the game, you can turn one science into ano
 
 ## Mod Settings
 
-Version 2.3.0 introduces extensive customization! Access settings via:
+Version 2.4.0 introduces extensive customization! Access settings via:
 **Main Menu → Settings → Mod Settings → Startup tab**
 
 ### Core Settings:
@@ -25,7 +25,16 @@ Version 2.3.0 introduces extensive customization! Access settings via:
 - **Product Amount Multiplier**: Multiply the output of conversions (default: 1, range: 1-100)
 - **Conversion Time**: Adjust how long each conversion takes in seconds (default: 10, range: 1-300)
 
-### Tier-Specific Toggles (NEW in v2.3.0):
+### Bidirectional Toggles (NEW in v2.4.0):
+- **Enable Upgrade Conversions**: Control all lower→higher tier conversions (default: enabled)
+- **Enable Downgrade Conversions**: Control all higher→lower tier conversions (default: enabled)
+
+**Challenge Run Ideas:**
+- **Upgrades Only**: Disable downgrades to prevent "recycling" higher tier science
+- **Downgrades Only**: Disable upgrades to force production of all science types
+- **One-Way Progression**: Combine with tier toggles for unique gameplay
+
+### Tier-Specific Toggles (v2.3.0):
 Enable or disable individual conversion tiers for custom gameplay:
 - **Tier 1**: Red ↔ Green (Automation ↔ Logistic)
 - **Tier 2**: Green ↔ Blue (Logistic ↔ Chemical)

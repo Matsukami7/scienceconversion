@@ -7,6 +7,10 @@ local downgrade_base = settings.startup["science-conversion-downgrade-base-ratio
 local product_mult = settings.startup["science-conversion-product-multiplier"].value
 local energy_time = settings.startup["science-conversion-energy-time"].value
 
+-- Get bidirectional toggle settings
+local upgrades_enabled = settings.startup["science-conversion-enable-upgrades"].value
+local downgrades_enabled = settings.startup["science-conversion-enable-downgrades"].value
+
 -- Get tier enable/disable settings
 local tier_enabled = {
     [1] = settings.startup["science-conversion-enable-tier-1"].value,  -- Red <-> Green
@@ -97,9 +101,12 @@ for _, conversion in pairs(conversion_data) do
     local recipe = data.raw.recipe[recipe_name]
     local technology = data.raw.technology[tech_name]
     
-    -- Check if this tier is enabled
-    if tier_enabled[tier_number] then
-        -- Tier is enabled - update recipe with settings
+    -- Check if this tier is enabled AND if the direction (upgrade/downgrade) is enabled
+    local direction_enabled = (is_upgrade and upgrades_enabled) or (not is_upgrade and downgrades_enabled)
+    local should_enable = tier_enabled[tier_number] and direction_enabled
+    
+    if should_enable then
+        -- Tier and direction are enabled - update recipe with settings
         if recipe then
             -- Calculate ingredient amount
             local ingredient_amount = calculate_ingredient_amount(tier_diff, is_upgrade)
@@ -114,7 +121,7 @@ for _, conversion in pairs(conversion_data) do
             }
         end
     else
-        -- Tier is disabled - disable the recipe and remove from technology
+        -- Tier or direction is disabled - disable the recipe and remove from technology
         if recipe then
             recipe.enabled = false
             recipe.hidden = true
