@@ -1,7 +1,7 @@
 # Science Conversion - Settings Guide
 
 ## Overview
-Version 2.2.0 introduces customizable mod settings that allow you to control how science pack conversions work in your game.
+Version 2.3.0 introduces customizable mod settings that allow you to control how science pack conversions work in your game, including the ability to enable/disable specific conversion tiers.
 
 ## Accessing Settings
 1. Launch Factorio
@@ -70,6 +70,31 @@ Sets how long each conversion takes to complete.
 - Set to 5: Faster conversions (5 seconds each)
 - Set to 30: Slower conversions (30 seconds each)
 
+### 6-14. Tier-Specific Toggles (Boolean)
+**Default: All Enabled**
+
+Individual toggles for each conversion tier. Disable specific tiers to restrict certain conversions for challenge runs or balance.
+
+- **Tier 1: Red ↔ Green** - Automation ↔ Logistic science
+- **Tier 2: Green ↔ Blue** - Logistic ↔ Chemical science
+- **Tier 3: Blue ↔ Purple** - Chemical ↔ Production science
+- **Tier 4: Purple ↔ Yellow** - Production ↔ Utility science
+- **Tier 5: White ↔ Orange** - Space ↔ Metallurgic science
+- **Tier 6: White ↔ Pink** - Space ↔ Electromagnetic science
+- **Tier 7: White ↔ Lime** - Space ↔ Agricultural science
+- **Tier 8: White ↔ Dark Blue** - Space ↔ Cryogenic science
+- **Tier 9: White ↔ Black** - Space ↔ Promethium science
+
+**When disabled:**
+- Both recipes for that tier are hidden
+- The technology for that tier is hidden if it has no other effects
+- Existing buildings won't be able to craft those recipes
+
+**Use cases:**
+- Disable early-game conversions (Tier 1-4) for a harder start
+- Disable Space Age conversions (Tier 5-9) for vanilla-only gameplay
+- Create custom progression by selectively enabling tiers
+
 ## Example Configurations
 
 ### Easy Mode
@@ -78,6 +103,7 @@ Sets how long each conversion takes to complete.
 - Base Downgrade Ratio: 1
 - Product Multiplier: 2
 - Conversion Time: 5
+- All Tiers: Enabled
 
 *Result: Quick, easy conversions with double output*
 
@@ -87,6 +113,7 @@ Sets how long each conversion takes to complete.
 - Base Downgrade Ratio: 2
 - Product Multiplier: 1
 - Conversion Time: 30
+- All Tiers: Enabled
 
 *Result: Expensive, slow conversions that require planning*
 
@@ -96,8 +123,31 @@ Sets how long each conversion takes to complete.
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- All Tiers: Enabled
 
 *Result: Original mod behavior with progressive difficulty*
+
+### Vanilla Only (No Space Age)
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Tiers 1-4: Enabled
+- Tiers 5-9: Disabled
+
+*Result: Only base game science conversions available*
+
+### Space Age Only
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Tiers 1-4: Disabled
+- Tiers 5-9: Enabled
+
+*Result: Only Space Age science conversions available*
 
 ## Technical Details
 
