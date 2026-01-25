@@ -1,16 +1,44 @@
 Welcome to the Science Conversion Mod
 Author : Narokuu
 Discord: narokuu
-Contact: Contact me in the factorio discord, or on twitter If you use this mod in a video or on stream,
-Provide a link here instead of a download link.
+Contact: Contact me in the factorio discord.
 
 Please contact me if you want to edit or make changes to this mod.
 
-Special Thanks: A very special thanks to: Darthun, for guiding me through my first mod, So many years ago, and helping  create the original art used for the mod. Justarandomgeek, 
-and other members of the modding community, for the tireless questions and help. And a huge thanks to the entire factorio dev team. For making this game
-amazing, and what it is today!
+Convert Factorio Science up and down a tier! Now With Space Age!
 
 ------------------------------------------------------------------
+Version: 2.3.0
+Date: 01/25/2026
+    Info: Added tier-specific enable/disable toggles
+    Features:
+    - Added individual toggle settings for each conversion tier (9 total)
+    - Players can now enable/disable specific science conversions:
+      * Tier 1: Red ↔ Green
+      * Tier 2: Green ↔ Blue
+      * Tier 3: Blue ↔ Purple
+      * Tier 4: Purple ↔ Yellow
+      * Tier 5: White ↔ Orange
+      * Tier 6: White ↔ Pink
+      * Tier 7: White ↔ Lime
+      * Tier 8: White ↔ Dark Blue
+      * Tier 9: White ↔ Black
+    - Disabled tiers hide their recipes and technologies
+    - All tiers enabled by default for backward compatibility
+    - Perfect for challenge runs or restricting specific conversions
+--------------------------------------------------------------------------
+Version: 2.2.0
+Date: 01/25/2026
+    Info: Added customizable mod settings
+    Features:
+    - Added toggle for linear conversion scaling (enable/disable progressive ratios)
+    - Added setting to customize base upgrade ratio (default: 10)
+    - Added setting to customize base downgrade ratio (default: 1)
+    - Added setting to customize product amount multiplier (default: 1)
+    - Added setting to customize conversion time in seconds (default: 10)
+    - All settings are startup settings and require game restart to apply
+    - Settings accessible via Main Menu → Settings → Mod Settings → Startup tab
+--------------------------------------------------------------------------
 Version: 2.1.0
 Date: 01/23/2026
     Info: Updated for Factorio 2.0.73 compatibility
