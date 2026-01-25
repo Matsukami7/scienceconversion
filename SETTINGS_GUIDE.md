@@ -70,7 +70,33 @@ Sets how long each conversion takes to complete.
 - Set to 5: Faster conversions (5 seconds each)
 - Set to 30: Slower conversions (30 seconds each)
 
-### 6. Enable Upgrade Conversions (Boolean)
+### 6. Pollution Multiplier (Double)
+**Default: 1.0** | **Range: 0.0-10.0**
+
+Controls how much pollution science pack conversions generate.
+
+**How it works:**
+- **0.0**: No pollution (completely clean/eco-friendly conversions)
+- **1.0**: Normal pollution levels (default, balanced)
+- **2.0**: Double pollution
+- **5.0**: 5x pollution (heavy pollution challenge)
+- **10.0**: Maximum pollution (extreme challenge)
+
+**Examples:**
+- Set to 0: Eco-friendly factory - conversions produce no pollution
+- Set to 1: Balanced gameplay - normal pollution levels
+- Set to 3: Pollution challenge - conversions attract more biters
+- Set to 10: Extreme mode - massive pollution from conversions
+
+**Use cases:**
+- **Eco-Friendly Run**: Set to 0 to avoid pollution from conversions
+- **Deathworld Challenge**: Set to 5+ to increase biter aggression
+- **Pollution Management**: Fine-tune pollution based on your factory design
+- **Roleplay**: Make conversions "dirty" or "clean" based on your preference
+
+**Note:** This setting affects ALL conversion recipes equally. It multiplies the base pollution value of the recipe.
+
+### 7. Enable Upgrade Conversions (Boolean)
 **Default: Enabled**
 
 Master toggle for all upgrade conversions (lower tier → higher tier).
@@ -85,7 +111,7 @@ Master toggle for all upgrade conversions (lower tier → higher tier).
 - Prevent "skipping" lower tier science production
 - Create harder progression challenges
 
-### 7. Enable Downgrade Conversions (Boolean)
+### 8. Enable Downgrade Conversions (Boolean)
 **Default: Enabled**
 
 Master toggle for all downgrade conversions (higher tier → lower tier).
@@ -102,7 +128,7 @@ Master toggle for all downgrade conversions (higher tier → lower tier).
 
 **Note:** Both bidirectional toggles work in combination with tier-specific toggles. A recipe must pass BOTH checks to be enabled.
 
-### 8-16. Tier-Specific Toggles (Boolean)
+### 9-17. Tier-Specific Toggles (Boolean)
 **Default: All Enabled**
 
 Individual toggles for each conversion tier. Disable specific tiers to restrict certain conversions for challenge runs or balance.
@@ -135,11 +161,12 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 2
 - Conversion Time: 5
+- Pollution Multiplier: 0.5
 - Enable Upgrades: Yes
 - Enable Downgrades: Yes
 - All Tiers: Enabled
 
-*Result: Quick, easy conversions with double output*
+*Result: Quick, easy conversions with double output and reduced pollution*
 
 ### Hard Mode
 - Linear Scaling: Enabled
@@ -147,11 +174,12 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 2
 - Product Multiplier: 1
 - Conversion Time: 30
+- Pollution Multiplier: 3.0
 - Enable Upgrades: Yes
 - Enable Downgrades: Yes
 - All Tiers: Enabled
 
-*Result: Expensive, slow conversions that require planning*
+*Result: Expensive, slow conversions that require planning and generate heavy pollution*
 
 ### Balanced (Default)
 - Linear Scaling: Enabled
@@ -159,6 +187,7 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- Pollution Multiplier: 1.0
 - Enable Upgrades: Yes
 - Enable Downgrades: Yes
 - All Tiers: Enabled
@@ -209,11 +238,38 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- Pollution Multiplier: 1.0
 - Enable Upgrades: No
 - Enable Downgrades: Yes
 - All Tiers: Enabled
 
 *Result: Can only convert higher tier science to lower tier. Must produce all high-tier science normally.*
+
+### Eco-Friendly Mode (NEW in v2.4.0)
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Pollution Multiplier: 0.0
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
+- All Tiers: Enabled
+
+*Result: Science conversions produce zero pollution. Perfect for eco-friendly factories or avoiding biters.*
+
+### Pollution Challenge Mode (NEW in v2.4.0)
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Pollution Multiplier: 5.0
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
+- All Tiers: Enabled
+
+*Result: Science conversions generate 5x pollution. Attracts more biters for a combat-focused challenge.*
 
 ## Technical Details
 

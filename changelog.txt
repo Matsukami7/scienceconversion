@@ -10,14 +10,21 @@ Convert Factorio Science up and down a tier! Now With Space Age!
 ------------------------------------------------------------------
 Version: 2.4.0
 Date: 01/25/2026
-    Info: Added bidirectional conversion toggles
+    Info: Added bidirectional conversion toggles and pollution control
     Features:
     - Added "Enable Upgrade Conversions" setting - control all lower→higher tier conversions
     - Added "Enable Downgrade Conversions" setting - control all higher→lower tier conversions
-    - Both settings enabled by default for backward compatibility
+    - Added "Pollution Multiplier" setting - control pollution generation from conversions
+      * Range: 0.0 to 10.0 (default: 1.0)
+      * Set to 0 for clean/eco-friendly conversions (no pollution)
+      * Set to 1 for normal pollution levels
+      * Set higher for dirty/polluting conversions
+    - Both direction settings enabled by default for backward compatibility
     - Perfect for challenge runs:
       * Upgrades only: Disable downgrades to prevent "recycling" higher tier science
       * Downgrades only: Disable upgrades to force production of lower tier science
+      * Clean conversions: Set pollution to 0 for environmentally friendly gameplay
+      * Dirty conversions: Set pollution to 5+ for pollution-heavy challenge runs
     - Works in combination with tier-specific toggles for maximum control
     - Example: Enable only upgrades + disable Space Age tiers = vanilla progression only
 --------------------------------------------------------------------------

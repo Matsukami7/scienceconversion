@@ -6,6 +6,7 @@ local upgrade_base = settings.startup["science-conversion-upgrade-base-ratio"].v
 local downgrade_base = settings.startup["science-conversion-downgrade-base-ratio"].value
 local product_mult = settings.startup["science-conversion-product-multiplier"].value
 local energy_time = settings.startup["science-conversion-energy-time"].value
+local pollution_mult = settings.startup["science-conversion-pollution-multiplier"].value
 
 -- Get bidirectional toggle settings
 local upgrades_enabled = settings.startup["science-conversion-enable-upgrades"].value
@@ -119,6 +120,14 @@ for _, conversion in pairs(conversion_data) do
             recipe.results = {
                 {type = "item", name = recipe.results[1].name, amount = product_mult}
             }
+            
+            -- Set pollution multiplier (0 = no pollution, 1 = normal, >1 = more pollution)
+            if pollution_mult > 0 then
+                recipe.emissions_multiplier = pollution_mult
+            else
+                -- Setting to 0 means no pollution
+                recipe.emissions_multiplier = 0
+            end
         end
     else
         -- Tier or direction is disabled - disable the recipe and remove from technology

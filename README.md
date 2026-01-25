@@ -24,15 +24,23 @@ Version 2.4.0 introduces extensive customization! Access settings via:
 - **Base Downgrade Ratio**: Set how many science packs are needed to downgrade (default: 1, range: 1-100)
 - **Product Amount Multiplier**: Multiply the output of conversions (default: 1, range: 1-100)
 - **Conversion Time**: Adjust how long each conversion takes in seconds (default: 10, range: 1-300)
+- **Pollution Multiplier**: Control pollution generation from conversions (default: 1.0, range: 0.0-10.0)
 
-### Bidirectional Toggles (NEW in v2.4.0):
+### Bidirectional Toggles (v2.4.0):
 - **Enable Upgrade Conversions**: Control all lower→higher tier conversions (default: enabled)
 - **Enable Downgrade Conversions**: Control all higher→lower tier conversions (default: enabled)
+
+### Pollution Control (NEW in v2.4.0):
+- **Set to 0**: Clean conversions with no pollution (eco-friendly)
+- **Set to 1**: Normal pollution levels (default)
+- **Set to 2-10**: Increased pollution for challenge runs
 
 **Challenge Run Ideas:**
 - **Upgrades Only**: Disable downgrades to prevent "recycling" higher tier science
 - **Downgrades Only**: Disable upgrades to force production of all science types
 - **One-Way Progression**: Combine with tier toggles for unique gameplay
+- **Eco-Friendly**: Set pollution to 0 for clean conversions
+- **Pollution Challenge**: Set pollution to 5+ and deal with biters
 
 ### Tier-Specific Toggles (v2.3.0):
 Enable or disable individual conversion tiers for custom gameplay:
