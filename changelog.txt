@@ -8,6 +8,19 @@ Please contact me if you want to edit or make changes to this mod.
 Convert Factorio Science up and down a tier! Now With Space Age!
 
 ------------------------------------------------------------------
+Version: 2.4.0
+Date: 01/25/2026
+    Info: Added bidirectional conversion toggles
+    Features:
+    - Added "Enable Upgrade Conversions" setting - control all lower→higher tier conversions
+    - Added "Enable Downgrade Conversions" setting - control all higher→lower tier conversions
+    - Both settings enabled by default for backward compatibility
+    - Perfect for challenge runs:
+      * Upgrades only: Disable downgrades to prevent "recycling" higher tier science
+      * Downgrades only: Disable upgrades to force production of lower tier science
+    - Works in combination with tier-specific toggles for maximum control
+    - Example: Enable only upgrades + disable Space Age tiers = vanilla progression only
+--------------------------------------------------------------------------
 Version: 2.3.0
 Date: 01/25/2026
     Info: Added tier-specific enable/disable toggles

@@ -1,7 +1,7 @@
 # Science Conversion - Settings Guide
 
 ## Overview
-Version 2.3.0 introduces customizable mod settings that allow you to control how science pack conversions work in your game, including the ability to enable/disable specific conversion tiers.
+Version 2.4.0 introduces customizable mod settings that allow you to control how science pack conversions work in your game, including bidirectional toggles and the ability to enable/disable specific conversion tiers.
 
 ## Accessing Settings
 1. Launch Factorio
@@ -70,7 +70,39 @@ Sets how long each conversion takes to complete.
 - Set to 5: Faster conversions (5 seconds each)
 - Set to 30: Slower conversions (30 seconds each)
 
-### 6-14. Tier-Specific Toggles (Boolean)
+### 6. Enable Upgrade Conversions (Boolean)
+**Default: Enabled**
+
+Master toggle for all upgrade conversions (lower tier → higher tier).
+
+**When disabled:**
+- All recipes that upgrade science packs are hidden
+- Only downgrade conversions remain available
+- Perfect for challenge runs where you must produce all science types
+
+**Use cases:**
+- Force proper science production chains
+- Prevent "skipping" lower tier science production
+- Create harder progression challenges
+
+### 7. Enable Downgrade Conversions (Boolean)
+**Default: Enabled**
+
+Master toggle for all downgrade conversions (higher tier → lower tier).
+
+**When disabled:**
+- All recipes that downgrade science packs are hidden
+- Only upgrade conversions remain available
+- Prevents "recycling" higher tier science into lower tiers
+
+**Use cases:**
+- Prevent exploitation of higher tier science production
+- Force one-way progression through science tiers
+- Create unique challenge scenarios
+
+**Note:** Both bidirectional toggles work in combination with tier-specific toggles. A recipe must pass BOTH checks to be enabled.
+
+### 8-16. Tier-Specific Toggles (Boolean)
 **Default: All Enabled**
 
 Individual toggles for each conversion tier. Disable specific tiers to restrict certain conversions for challenge runs or balance.
@@ -103,6 +135,8 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 2
 - Conversion Time: 5
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
 - All Tiers: Enabled
 
 *Result: Quick, easy conversions with double output*
@@ -113,6 +147,8 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 2
 - Product Multiplier: 1
 - Conversion Time: 30
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
 - All Tiers: Enabled
 
 *Result: Expensive, slow conversions that require planning*
@@ -123,6 +159,8 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
 - All Tiers: Enabled
 
 *Result: Original mod behavior with progressive difficulty*
@@ -133,6 +171,8 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
 - Tiers 1-4: Enabled
 - Tiers 5-9: Disabled
 
@@ -144,10 +184,36 @@ Individual toggles for each conversion tier. Disable specific tiers to restrict 
 - Base Downgrade Ratio: 1
 - Product Multiplier: 1
 - Conversion Time: 10
+- Enable Upgrades: Yes
+- Enable Downgrades: Yes
 - Tiers 1-4: Disabled
 - Tiers 5-9: Enabled
 
 *Result: Only Space Age science conversions available*
+
+### Upgrades Only Challenge (NEW in v2.4.0)
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Enable Upgrades: Yes
+- Enable Downgrades: No
+- All Tiers: Enabled
+
+*Result: Can only convert lower tier science to higher tier. Forces proper production chains.*
+
+### Downgrades Only Challenge (NEW in v2.4.0)
+- Linear Scaling: Enabled
+- Base Upgrade Ratio: 10
+- Base Downgrade Ratio: 1
+- Product Multiplier: 1
+- Conversion Time: 10
+- Enable Upgrades: No
+- Enable Downgrades: Yes
+- All Tiers: Enabled
+
+*Result: Can only convert higher tier science to lower tier. Must produce all high-tier science normally.*
 
 ## Technical Details
 
