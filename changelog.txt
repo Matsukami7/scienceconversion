@@ -11,6 +11,18 @@ and other members of the modding community, for the tireless questions and help.
 amazing, and what it is today!
 
 ------------------------------------------------------------------
+Version: 2.2.0
+Date: 01/25/2026
+    Info: Added customizable mod settings
+    Features:
+    - Added toggle for linear conversion scaling (enable/disable progressive ratios)
+    - Added setting to customize base upgrade ratio (default: 10)
+    - Added setting to customize base downgrade ratio (default: 1)
+    - Added setting to customize product amount multiplier (default: 1)
+    - Added setting to customize conversion time in seconds (default: 10)
+    - All settings are startup settings and require game restart to apply
+    - Settings accessible via Main Menu → Settings → Mod Settings → Startup tab
+--------------------------------------------------------------------------
 Version: 2.1.0
 Date: 01/23/2026
     Info: Updated for Factorio 2.0.73 compatibility
