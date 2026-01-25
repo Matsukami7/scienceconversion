@@ -5,9 +5,7 @@ Contact: Contact me in the factorio discord.
 
 Please contact me if you want to edit or make changes to this mod.
 
-Special Thanks: A very special thanks to Darthun, for guiding me through my first mod, So many years ago, and helping  create the original art used for the mod. Justarandomgeek, 
-and other members of the modding community, for the tireless questions and help. And a huge thanks to the entire factorio dev team. For making this game
-amazing, and what it is today!
+Convert Factorio Science up and down a tier! Now With Space Age!
 
 ------------------------------------------------------------------
 Version: 2.3.0

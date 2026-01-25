@@ -2,7 +2,7 @@ Convert Factorio Science up and down a tier! Now With Space Age!
 
 Hello and thank you for downlaoding my mod! I hope you enjoy it!
 
-After researching the requiremnts in the game, you can turn one science into one another, up and down a tier. Allowing you to create new and unique factories!
+After researching the requiremnts in the game, you can turn one science into another, up and down a tier. Allowing you to create new and unique factories!
 
 ## Features
 
