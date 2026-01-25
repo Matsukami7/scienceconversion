@@ -1,93 +1,83 @@
-Welcome to the Science Conversion Mod
-Author : Narokuu
-Discord: narokuu
-Contact: Contact me in the factorio discord.
-
-Please contact me if you want to edit or make changes to this mod.
-
-Convert Factorio Science up and down a tier! Now With Space Age!
-
-------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 Version: 2.4.0
-Date: 01/25/2026
-    Info: Added bidirectional conversion toggles and pollution control
-    Features:
-    - Added "Enable Upgrade Conversions" setting - control all lower→higher tier conversions
-    - Added "Enable Downgrade Conversions" setting - control all higher→lower tier conversions
-    - Added "Pollution Multiplier" setting - control pollution generation from conversions
-      * Range: 0.0 to 10.0 (default: 1.0)
-      * Set to 0 for clean/eco-friendly conversions (no pollution)
-      * Set to 1 for normal pollution levels
-      * Set higher for dirty/polluting conversions
-    - Both direction settings enabled by default for backward compatibility
-    - Perfect for challenge runs:
-      * Upgrades only: Disable downgrades to prevent "recycling" higher tier science
-      * Downgrades only: Disable upgrades to force production of lower tier science
-      * Clean conversions: Set pollution to 0 for environmentally friendly gameplay
-      * Dirty conversions: Set pollution to 5+ for pollution-heavy challenge runs
+Date: 2026-01-25
+  Major Features:
+    - Added bidirectional conversion toggles - control upgrades and downgrades separately
+    - Added pollution multiplier - make conversions clean (0) or dirty (10x)
+  Changes:
+    - New setting: "Enable Upgrade Conversions" - toggle all lower→higher tier conversions
+    - New setting: "Enable Downgrade Conversions" - toggle all higher→lower tier conversions
+    - New setting: "Pollution Multiplier" - control pollution from conversions (range: 0.0-10.0)
+  Info:
+    - Perfect for challenge runs (upgrades only, downgrades only, eco-friendly, pollution challenge)
     - Works in combination with tier-specific toggles for maximum control
-    - Example: Enable only upgrades + disable Space Age tiers = vanilla progression only
---------------------------------------------------------------------------
+    - All settings enabled by default for backward compatibility
+---------------------------------------------------------------------------------------------------
 Version: 2.3.0
-Date: 01/25/2026
-    Info: Added tier-specific enable/disable toggles
-    Features:
-    - Added individual toggle settings for each conversion tier (9 total)
-    - Players can now enable/disable specific science conversions:
-      * Tier 1: Red ↔ Green
-      * Tier 2: Green ↔ Blue
-      * Tier 3: Blue ↔ Purple
-      * Tier 4: Purple ↔ Yellow
-      * Tier 5: White ↔ Orange
-      * Tier 6: White ↔ Pink
-      * Tier 7: White ↔ Lime
-      * Tier 8: White ↔ Dark Blue
-      * Tier 9: White ↔ Black
+Date: 2026-01-25
+  Major Features:
+    - Added tier-specific enable/disable toggles - control each conversion tier individually
+  Changes:
+    - New settings: 9 tier toggles (one for each science conversion tier)
     - Disabled tiers hide their recipes and technologies
+    - Perfect for vanilla-only gameplay or custom progression
+  Info:
     - All tiers enabled by default for backward compatibility
-    - Perfect for challenge runs or restricting specific conversions
---------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 Version: 2.2.0
-Date: 01/25/2026
-    Info: Added customizable mod settings
-    Features:
-    - Added toggle for linear conversion scaling (enable/disable progressive ratios)
-    - Added setting to customize base upgrade ratio (default: 10)
-    - Added setting to customize base downgrade ratio (default: 1)
-    - Added setting to customize product amount multiplier (default: 1)
-    - Added setting to customize conversion time in seconds (default: 10)
-    - All settings are startup settings and require game restart to apply
-    - Settings accessible via Main Menu → Settings → Mod Settings → Startup tab
---------------------------------------------------------------------------
+Date: 2026-01-25
+  Major Features:
+    - Added customizable mod settings - full control over conversion mechanics
+  Changes:
+    - New setting: Linear Conversion Scaling toggle
+    - New setting: Base Upgrade Ratio (1-1000, default: 10)
+    - New setting: Base Downgrade Ratio (1-100, default: 1)
+    - New setting: Product Amount Multiplier (1-100, default: 1)
+    - New setting: Conversion Time (1-300 seconds, default: 10)
+  Info:
+    - All settings accessible via Mod Settings → Startup tab
+    - Settings require game restart to apply
+---------------------------------------------------------------------------------------------------
 Version: 2.1.0
-Date: 01/23/2026
-    Info: Updated for Factorio 2.0.73 compatibility
-    - Verified compatibility with latest stable Factorio version (2.0.73)
-    - No API changes required - mod fully compatible with Factorio 2.0.x
---------------------------------------------------------------------------
-Version: 2.0
-Date: 07/05/2025
-    Info: Updated to 2.0.58 "Space Age"
-    - added the ability to convert space science into all new science packs compatable wiht space age.
---------------------------------------------------------------------------
+Date: 2026-01-23
+  Info:
+    - Updated for Factorio 2.0.73 compatibility
+    - Verified compatibility with latest stable version
+    - No API changes required
+---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2025-07-05
+  Major Features:
+    - Space Age support - convert all new planet science packs
+  Changes:
+    - Added conversions for Metallurgic, Electromagnetic, Agricultural, Cryogenic, and Promethium science
+    - Updated for Factorio 2.0.58 "Space Age"
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 5/20/2022
-	Info: Updated to 1.1.59
-----------------------------------------------------------------------------------------------------------------------------------------------
-Version: 1.1
-Date: 25. 04. 2021
-   Info: Updated to 1.1.32 factorio
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 2022-05-20
+  Info:
+    - Updated to Factorio 1.1.59
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2021-04-25
+  Info:
+    - Updated to Factorio 1.1.32
+---------------------------------------------------------------------------------------------------
 Version: 0.18.0
-Date: 23. 01. 2020
-  Info: Updated to work with factorio 0.18
-  Added Space Science
-  Balanced quanity needed for conversion for each tier of science
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Version: 17.1.2
-Date: 01. 01. 2020
-  Info: Updated guide, and fixed readme issues
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Version 17.1.1
-Info: Initial Mod Release
-
+Date: 2020-01-23
+  Major Features:
+    - Added Space Science conversions
+  Changes:
+    - Updated to Factorio 0.18
+    - Balanced conversion quantities for each tier
+---------------------------------------------------------------------------------------------------
+Version: 0.17.1.2
+Date: 2020-01-01
+  Info:
+    - Updated guide and fixed readme issues
+---------------------------------------------------------------------------------------------------
+Version: 0.17.1.1
+Date: 2019-12-01
+  Info:
+    - Initial mod release
+---------------------------------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 build-mod.sh
 
-# Future planning and ideas (not for public release)
-FUTURE_SETTINGS_IDEAS.md
+# Development documentation (not for public release)
+DEV_README.md
+docs/FUTURE_SETTINGS_IDEAS.md
