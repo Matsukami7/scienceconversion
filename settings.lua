@@ -47,6 +47,16 @@ data:extend({
         maximum_value = 300,
         order = "e"
     },
+    -- Pollution generation multiplier
+    {
+        type = "double-setting",
+        name = "science-conversion-pollution-multiplier",
+        setting_type = "startup",
+        default_value = 1.0,
+        minimum_value = 0.0,
+        maximum_value = 10.0,
+        order = "e-0"
+    },
     
     -- Bidirectional toggles
     {

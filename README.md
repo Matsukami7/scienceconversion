@@ -1,65 +1,214 @@
-Convert Factorio Science up and down a tier! Now With Space Age!
+# Science Conversion
 
-Hello and thank you for downlaoding my mod! I hope you enjoy it!
+Convert Factorio science packs up and down tiers! Full support for Factorio 2.0 and Space Age content.
 
-After researching the requiremnts in the game, you can turn one science into another, up and down a tier. Allowing you to create new and unique factories!
+# NOTE: If you wish to play/try the beta features, please visit the repo and check the `beta` branch. As this will always have newest features that are under testing.
+And refer to the readme called `Dev_README.md` for more information about the beta features.
+
+
+## Overview
+
+After researching the required technologies, you can convert science packs into one another - both up and down the tech tree! This allows you to create new and unique factory designs, optimize production chains, and customize your science progression.
 
 ## Features
 
-- **Convert science packs up and down tiers** - Full bidirectional conversion support
-- **Fully customizable conversion ratios** - Adjust ingredient and product amounts
-- **Toggle between linear scaling and uniform conversion rates** - Progressive or flat ratios
-- **Enable/disable specific conversion tiers** - Granular control over which conversions are available
-- **Adjust conversion times and product amounts** - Fine-tune difficulty and throughput
-- **Compatible with Factorio 2.0 and Space Age content** - All science types supported
+- ✅ **Bidirectional Conversions** - Convert science packs both up and down tiers
+- ✅ **All Science Types** - Supports vanilla and Space Age science packs
+- ✅ **Fully Customizable** - 17 settings to control every aspect of conversions
+- ✅ **Challenge Modes** - Enable/disable specific tiers or directions for unique gameplay
+- ✅ **Pollution Control** - Make conversions clean (0 pollution) or dirty (10x pollution)
+- ✅ **Balanced by Default** - Works great out of the box, customize if desired
+
+## How It Works
+
+1. Research the appropriate "Science Conversion" technology
+2. Unlock conversion recipes for that tier
+3. Use assemblers to convert science packs
+4. Customize behavior via mod settings (optional)
+
+**Example**: Research "Science Conversion Tier 1" to unlock:
+- Red → Green (10 automation science → 1 logistic science)
+- Green → Red (1 logistic science → 1 automation science)
+
+---
 
 ## Mod Settings
 
-Version 2.4.0 introduces extensive customization! Access settings via:
-**Main Menu → Settings → Mod Settings → Startup tab**
+Access settings via: **Main Menu → Settings → Mod Settings → Startup tab**
 
-### Core Settings:
-- **Linear Conversion Scaling**: Toggle between progressive ratios (10, 20, 30, 50, 100) or uniform ratios
-- **Base Upgrade Ratio**: Set how many science packs are needed to upgrade (default: 10, range: 1-1000)
-- **Base Downgrade Ratio**: Set how many science packs are needed to downgrade (default: 1, range: 1-100)
-- **Product Amount Multiplier**: Multiply the output of conversions (default: 1, range: 1-100)
-- **Conversion Time**: Adjust how long each conversion takes in seconds (default: 10, range: 1-300)
+*Note: All settings require restarting your game to apply changes.*
 
-### Bidirectional Toggles (NEW in v2.4.0):
-- **Enable Upgrade Conversions**: Control all lower→higher tier conversions (default: enabled)
-- **Enable Downgrade Conversions**: Control all higher→lower tier conversions (default: enabled)
+### Core Settings
 
-**Challenge Run Ideas:**
-- **Upgrades Only**: Disable downgrades to prevent "recycling" higher tier science
-- **Downgrades Only**: Disable upgrades to force production of all science types
-- **One-Way Progression**: Combine with tier toggles for unique gameplay
+| Setting | Default | Range | Description |
+|---------|---------|-------|-------------|
+| **Linear Conversion Scaling** | Enabled | On/Off | Progressive ratios (10, 20, 30, 50, 100) or uniform ratios |
+| **Base Upgrade Ratio** | 10 | 1-1000 | Science packs needed to upgrade to next tier |
+| **Base Downgrade Ratio** | 1 | 1-100 | Science packs needed to downgrade to previous tier |
+| **Product Amount Multiplier** | 1 | 1-100 | Multiply the output of all conversions |
+| **Conversion Time** | 10 sec | 1-300 sec | How long each conversion takes |
+| **Pollution Multiplier** | 1.0 | 0.0-10.0 | Pollution from conversions (0=clean, 10=extreme) |
 
-### Tier-Specific Toggles (v2.3.0):
-Enable or disable individual conversion tiers for custom gameplay:
-- **Tier 1**: Red ↔ Green (Automation ↔ Logistic)
-- **Tier 2**: Green ↔ Blue (Logistic ↔ Chemical)
-- **Tier 3**: Blue ↔ Purple (Chemical ↔ Production)
-- **Tier 4**: Purple ↔ Yellow (Production ↔ Utility)
-- **Tier 5**: White ↔ Orange (Space ↔ Metallurgic)
-- **Tier 6**: White ↔ Pink (Space ↔ Electromagnetic)
-- **Tier 7**: White ↔ Lime (Space ↔ Agricultural)
-- **Tier 8**: White ↔ Dark Blue (Space ↔ Cryogenic)
-- **Tier 9**: White ↔ Black (Space ↔ Promethium)
+### Direction Control
 
-**Use Cases:**
-- Disable Space Age tiers (5-9) for vanilla-only gameplay
-- Disable early-game tiers (1-4) for harder progression
-- Create custom challenge runs with selective conversions
-- Balance multiplayer games by restricting certain tiers
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Enable Upgrade Conversions** | Enabled | Allow converting lower→higher tier science |
+| **Enable Downgrade Conversions** | Enabled | Allow converting higher→lower tier science |
 
-*Note: All settings are startup settings and require restarting your game to apply changes.*
+### Tier-Specific Toggles
 
-For detailed setting descriptions and example configurations, see [SETTINGS_GUIDE.md](SETTINGS_GUIDE.md)
+Enable or disable individual conversion tiers:
+
+| Tier | Conversion | Science Types |
+|------|------------|---------------|
+| **Tier 1** | Red ↔ Green | Automation ↔ Logistic |
+| **Tier 2** | Green ↔ Blue | Logistic ↔ Chemical |
+| **Tier 3** | Blue ↔ Purple | Chemical ↔ Production |
+| **Tier 4** | Purple ↔ Yellow | Production ↔ Utility |
+| **Tier 5** | White ↔ Orange | Space ↔ Metallurgic |
+| **Tier 6** | White ↔ Pink | Space ↔ Electromagnetic |
+| **Tier 7** | White ↔ Lime | Space ↔ Agricultural |
+| **Tier 8** | White ↔ Dark Blue | Space ↔ Cryogenic |
+| **Tier 9** | White ↔ Black | Space ↔ Promethium |
+
+---
+
+## Example Configurations
+
+### Default (Balanced)
+Perfect for most players - progressive difficulty with full conversion support.
+- Linear Scaling: ✅ Enabled
+- All conversions: ✅ Enabled
+- Pollution: 1.0 (normal)
+
+### Eco-Friendly
+Zero pollution from conversions - perfect for avoiding biters.
+- Pollution Multiplier: **0.0**
+- All other settings: Default
+
+### Vanilla Only
+Disable Space Age conversions for base game only.
+- Tiers 1-4: ✅ Enabled
+- Tiers 5-9: ❌ Disabled
+
+### Upgrades Only Challenge
+Force proper science production - no recycling higher tier science.
+- Enable Upgrades: ✅ Enabled
+- Enable Downgrades: ❌ Disabled
+
+### Pollution Challenge
+Heavy pollution attracts more biters - combat-focused gameplay.
+- Pollution Multiplier: **5.0** or higher
+- All other settings: Default
+
+### Easy Mode
+Quick conversions with double output.
+- Base Upgrade Ratio: **5**
+- Product Multiplier: **2**
+- Conversion Time: **5 seconds**
+- Pollution: **0.5**
+
+---
+
+## Challenge Run Ideas
+
+- **One-Way Progression**: Disable downgrades to force building all science types
+- **Deathworld Enhancement**: Set pollution to 10.0 for maximum biter aggression
+- **Space Age Only**: Disable tiers 1-4, enable only space science conversions
+- **Clean Factory**: Set pollution to 0 for eco-friendly conversions
+- **Hard Mode**: Increase upgrade ratios to 20+, slow conversion time to 30+ seconds
+
+---
+
+## Compatibility
+
+- ✅ **Factorio 2.0+** - Fully compatible with latest version
+- ✅ **Space Age DLC** - All planet science packs supported
+- ✅ **Multiplayer** - Works perfectly in multiplayer games
+- ✅ **Existing Saves** - Can be added to or removed from existing saves
+- ✅ **Other Mods** - Compatible with most mods (no known conflicts)
+
+---
 
 ## Installation
 
-you can download the mod IN the factorio mod menu by searching "science conversion", or "Narokuu"
+### Via Factorio Mod Portal (Recommended)
+1. Open Factorio
+2. Go to **Mods** → **Install Mods**
+3. Search for "**Science Conversion**" or "**Narokuu**"
+4. Click **Install**
+5. Restart Factorio
 
-Or download the zip here, and put it in your mod folder in your factorio director!
+### Manual Installation
+1. Download the latest `.zip` file
+2. Place in your Factorio mods folder:
+   - **Windows**: `%appdata%\Factorio\mods`
+   - **Mac**: `~/Library/Application Support/factorio/mods`
+   - **Linux**: `~/.factorio/mods`
+3. Restart Factorio
 
-If you have any suggestions, bugs, requests, or anything else, plase feel free to comment OR submit a request!
+---
+
+## FAQ
+
+**Q: Can I change settings mid-game?**  
+A: Yes! Settings can be changed anytime, but require restarting Factorio to apply. Your save file remains compatible.
+
+**Q: Will this work with my existing save?**  
+A: Yes! The mod can be safely added to or removed from existing saves.
+
+**Q: Does this work in multiplayer?**  
+A: Yes! All players need the mod installed with the same settings.
+
+**Q: Can I disable pollution from conversions?**  
+A: Yes! Set "Pollution Multiplier" to 0.0 for completely clean conversions.
+
+**Q: How do I make conversions cheaper/more expensive?**  
+A: Adjust "Base Upgrade Ratio" - lower = cheaper, higher = more expensive.
+
+**Q: Can I disable Space Age conversions?**  
+A: Yes! Disable tiers 5-9 in the tier-specific toggles.
+
+---
+
+## Support & Feedback
+
+- **Mod Portal**: [Science Conversion](https://mods.factorio.com/)
+- **Discord**: Narokuu
+- **Issues**: Report bugs or request features via mod portal comments
+- **Source Code**: Available on request
+
+---
+
+## Credits
+
+- **Author**: Narokuu
+- **Special Thanks**: 
+  - Darthun - For guidance and original art
+  - Justarandomgeek - Modding help and support
+  - Factorio Dev Team - For making this amazing game
+  - Factorio Modding Community - For tireless help and support
+
+---
+
+## Version History
+
+See [changelog.txt](changelog.txt) for detailed version history.
+
+**Current Version**: 2.4.0
+- Added bidirectional conversion toggles (upgrades/downgrades)
+- Added pollution multiplier control (0-10x)
+- 17 total customization settings
+
+---
+
+## License
+
+Please contact the author before editing or redistributing this mod.
+
+If you use this mod in a video or stream, please link to the mod portal instead of providing direct downloads.
+
+---
+
+**Enjoy converting your science packs!** 🧪🔬⚗️
