@@ -2,6 +2,10 @@
 
 Convert Factorio science packs up and down tiers! Full support for Factorio 2.0 and Space Age content.
 
+# NOTE: If you wish to play/try the beta features, please visit the repo and check the `beta` branch. As this will always have newest features that are under testing.
+And refer to the readme called `Dev_README.md` for more information about the beta features.
+
+
 ## Overview
 
 After researching the required technologies, you can convert science packs into one another - both up and down the tech tree! This allows you to create new and unique factory designs, optimize production chains, and customize your science progression.
