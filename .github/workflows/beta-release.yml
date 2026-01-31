@@ -1,0 +1,115 @@
+name: Create Beta Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*-beta.*'
+      - 'v*.*.*-alpha.*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          BASE_VERSION=$(echo $VERSION | sed 's/-beta.*//' | sed 's/-alpha.*//')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "base_version=$BASE_VERSION" >> $GITHUB_OUTPUT
+          echo "Full version: $VERSION"
+          echo "Base version: $BASE_VERSION"
+          
+      - name: Verify base version matches info.json
+        run: |
+          INFO_VERSION=$(grep -oP '"version":\s*"\K[^"]+' info.json)
+          BASE_VERSION="${{ steps.get_version.outputs.base_version }}"
+          echo "info.json version: $INFO_VERSION"
+          echo "Tag base version: $BASE_VERSION"
+          if [ "$INFO_VERSION" != "$BASE_VERSION" ]; then
+            echo "WARNING: Version mismatch!"
+            echo "info.json has version $INFO_VERSION but tag base is $BASE_VERSION"
+            echo "This is acceptable for beta releases, continuing..."
+          fi
+          
+      - name: Build mod package
+        id: build
+        run: |
+          MOD_NAME="ScienceConversion"
+          VERSION="${{ steps.get_version.outputs.version }}"
+          BASE_VERSION="${{ steps.get_version.outputs.base_version }}"
+          PACKAGE_NAME="${MOD_NAME}_${VERSION}"
+          
+          # Create temporary directory
+          mkdir -p /tmp/build
+          
+          # Copy mod files to properly named folder
+          cp -r . "/tmp/build/${PACKAGE_NAME}"
+          
+          # Remove development files
+          cd "/tmp/build/${PACKAGE_NAME}"
+          rm -rf .git .github .gitignore build-mod.sh .DS_Store DEV_README.md docs
+          
+          # Update info.json with beta version
+          sed -i "s/\"version\": \"${BASE_VERSION}\"/\"version\": \"${VERSION}\"/" info.json
+          
+          # Create zip
+          cd /tmp/build
+          zip -r "${PACKAGE_NAME}.zip" "${PACKAGE_NAME}"
+          
+          # Move zip to workspace
+          mv "${PACKAGE_NAME}.zip" "${GITHUB_WORKSPACE}/"
+          
+          echo "package_name=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
+          echo "zip_file=${PACKAGE_NAME}.zip" >> $GITHUB_OUTPUT
+          
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          BASE_VERSION="${{ steps.get_version.outputs.base_version }}"
+          FULL_VERSION="${{ steps.get_version.outputs.version }}"
+          
+          # Try to extract changelog for base version
+          awk "/^Version: ${BASE_VERSION}/,/^---/" changelog.txt | sed '1d;$d' > release_notes.md
+          
+          # Add beta warning at the top
+          echo "⚠️ **BETA RELEASE** - This is a pre-release version for testing purposes." > beta_notes.md
+          echo "" >> beta_notes.md
+          echo "**Version:** ${FULL_VERSION}" >> beta_notes.md
+          echo "" >> beta_notes.md
+          echo "---" >> beta_notes.md
+          echo "" >> beta_notes.md
+          cat release_notes.md >> beta_notes.md
+          
+          # If no specific changelog found, use a default message
+          if [ ! -s release_notes.md ]; then
+            echo "" >> beta_notes.md
+            echo "Beta release version ${FULL_VERSION}" >> beta_notes.md
+            echo "" >> beta_notes.md
+            echo "See [changelog.txt](https://github.com/${{ github.repository }}/blob/dev/changelog.txt) for details." >> beta_notes.md
+          fi
+          
+          mv beta_notes.md release_notes.md
+          cat release_notes.md
+          
+      - name: Create GitHub Pre-Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.build.outputs.zip_file }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: true
+          name: "Beta v${{ steps.get_version.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.package_name }}
+          path: ${{ steps.build.outputs.zip_file }}
+          retention-days: 30
