@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.5.0
+Date: 2026-01-31
+  Major Features:
+    - Base Factorio compatibility - mod now works without Space Age expansion!
+  Changes:
+    - Made Space Age an optional dependency
+    - Space Age science conversions (tiers 5-9) only load when expansion is installed
+    - Base game conversions (tiers 1-4) always available
+    - Updated mod description to reflect dual compatibility
+  Info:
+    - Base Factorio: 4 technologies unlocking 8 recipes (Red↔Green, Green↔Blue, Blue↔Purple, Purple↔Yellow)
+    - With Space Age: All 9 technologies unlocking 18 recipes (includes planet sciences)
+    - No configuration needed - automatically detects installed content
+    - All existing settings work with both versions
+---------------------------------------------------------------------------------------------------
 Version: 2.4.0
 Date: 2026-01-25
   Major Features:
