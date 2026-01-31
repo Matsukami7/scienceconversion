@@ -1,0 +1,97 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+      - '!v*.*.*-beta.*'
+      - '!v*.*.*-alpha.*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+          
+      - name: Verify version matches info.json
+        run: |
+          INFO_VERSION=$(grep -oP '"version":\s*"\K[^"]+' info.json)
+          TAG_VERSION="${{ steps.get_version.outputs.version }}"
+          echo "info.json version: $INFO_VERSION"
+          echo "Tag version: $TAG_VERSION"
+          if [ "$INFO_VERSION" != "$TAG_VERSION" ]; then
+            echo "ERROR: Version mismatch!"
+            echo "info.json has version $INFO_VERSION but tag is v$TAG_VERSION"
+            exit 1
+          fi
+          
+      - name: Build mod package
+        id: build
+        run: |
+          MOD_NAME="ScienceConversion"
+          VERSION="${{ steps.get_version.outputs.version }}"
+          PACKAGE_NAME="${MOD_NAME}_${VERSION}"
+          
+          # Create temporary directory
+          mkdir -p /tmp/build
+          
+          # Copy mod files to properly named folder
+          cp -r . "/tmp/build/${PACKAGE_NAME}"
+          
+          # Remove development files
+          cd "/tmp/build/${PACKAGE_NAME}"
+          rm -rf .git .github .gitignore build-mod.sh .DS_Store DEV_README.md docs
+          
+          # Create zip
+          cd /tmp/build
+          zip -r "${PACKAGE_NAME}.zip" "${PACKAGE_NAME}"
+          
+          # Move zip to workspace
+          mv "${PACKAGE_NAME}.zip" "${GITHUB_WORKSPACE}/"
+          
+          echo "package_name=${PACKAGE_NAME}" >> $GITHUB_OUTPUT
+          echo "zip_file=${PACKAGE_NAME}.zip" >> $GITHUB_OUTPUT
+          
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          VERSION="${{ steps.get_version.outputs.version }}"
+          
+          # Extract changelog section for this version
+          awk "/^Version: ${VERSION}/,/^---/" changelog.txt | sed '1d;$d' > release_notes.md
+          
+          # If no specific changelog found, use a default message
+          if [ ! -s release_notes.md ]; then
+            echo "Release version ${VERSION}" > release_notes.md
+            echo "" >> release_notes.md
+            echo "See [changelog.txt](https://github.com/${{ github.repository }}/blob/master/changelog.txt) for details." >> release_notes.md
+          fi
+          
+          cat release_notes.md
+          
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.build.outputs.zip_file }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: false
+          name: "Release v${{ steps.get_version.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.package_name }}
+          path: ${{ steps.build.outputs.zip_file }}
+          retention-days: 90

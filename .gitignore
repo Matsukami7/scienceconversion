@@ -3,3 +3,12 @@ build-mod.sh
 # Development documentation (not for public release)
 DEV_README.md
 docs/FUTURE_SETTINGS_IDEAS.md
+
+# Build artifacts
+*.zip
+ScienceConversion_*/
+release_notes.md
+beta_notes.md
+
+# macOS
+.DS_Store
