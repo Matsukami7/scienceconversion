@@ -1,4 +1,5 @@
-data:extend({
+-- Base game recipes (always available)
+local base_recipes = {
     {
       type = "recipe",
       name = "green-to-red",
@@ -94,7 +95,11 @@ data:extend({
       results = {
         {type = "item", name = "production-science-pack", amount = 1}
       }
-    },
+    }
+}
+
+-- Space Age recipes (only if Space Age is installed)
+local space_age_recipes = {
     {
       type = "recipe",
       name = "white-to-orange",
@@ -215,4 +220,12 @@ data:extend({
         {type = "item", name = "space-science-pack", amount = 1}
       }
     }
-})
+}
+
+-- Load base game recipes
+data:extend(base_recipes)
+
+-- Load Space Age recipes only if the expansion is installed
+if mods["space-age"] then
+    data:extend(space_age_recipes)
+end

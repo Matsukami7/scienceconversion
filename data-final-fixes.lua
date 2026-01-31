@@ -30,7 +30,8 @@ local tier_enabled = {
 -- Tier 4: Purple (production), Tier 5: Yellow (utility), Tier 6: White (space)
 -- Tier 7: Orange/Pink/Lime/Dark-blue (planet sciences), Tier 8: Black (promethium)
 
-local conversion_data = {
+-- Base game conversion data (always available)
+local base_conversion_data = {
     -- Format: {recipe_name, tier_difference, is_upgrade, tier_number, technology_name}
     -- Tier 1: Red <-> Green
     {"red-to-green", 1, true, 1, "science-conversion-one"},
@@ -46,8 +47,11 @@ local conversion_data = {
     
     -- Tier 4: Purple <-> Yellow
     {"purple-to-yellow", 1, true, 4, "science-conversion-four"},
-    {"yellow-to-purple", 1, false, 4, "science-conversion-four"},
-    
+    {"yellow-to-purple", 1, false, 4, "science-conversion-four"}
+}
+
+-- Space Age conversion data (only if Space Age is installed)
+local space_age_conversion_data = {
     -- Tier 5: White <-> Orange
     {"white-to-orange", 1, true, 5, "science-conversion-five"},
     {"orange-to-white", 1, false, 5, "science-conversion-five"},
@@ -68,6 +72,18 @@ local conversion_data = {
     {"white-to-black", 2, true, 9, "science-conversion-nine"},
     {"black-to-white", 2, false, 9, "science-conversion-nine"}
 }
+
+-- Combine conversion data based on available mods
+local conversion_data = {}
+for _, v in pairs(base_conversion_data) do
+    table.insert(conversion_data, v)
+end
+
+if mods["space-age"] then
+    for _, v in pairs(space_age_conversion_data) do
+        table.insert(conversion_data, v)
+    end
+end
 
 -- Function to calculate ingredient amount based on settings
 local function calculate_ingredient_amount(tier_diff, is_upgrade)
@@ -157,12 +173,16 @@ end
 
 -- Special handling for linear scaling with more granular tier differences
 if linear_scaling then
-    -- Adjust specific recipes to match original progression
-    local special_scaling = {
+    -- Base game special scaling
+    local base_special_scaling = {
         ["red-to-green"] = {scale = 1, tier = 1},    -- 10 * 1 = 10
         ["green-to-blue"] = {scale = 2, tier = 2},   -- 10 * 2 = 20
         ["blue-to-purple"] = {scale = 3, tier = 3},  -- 10 * 3 = 30
-        ["purple-to-yellow"] = {scale = 5, tier = 4}, -- 10 * 5 = 50
+        ["purple-to-yellow"] = {scale = 5, tier = 4} -- 10 * 5 = 50
+    }
+    
+    -- Space Age special scaling (only if Space Age is installed)
+    local space_age_special_scaling = {
         ["white-to-orange"] = {scale = 10, tier = 5}, -- 10 * 10 = 100
         ["white-to-pink"] = {scale = 10, tier = 6},
         ["white-to-lime"] = {scale = 10, tier = 7},
@@ -170,6 +190,19 @@ if linear_scaling then
         ["white-to-black"] = {scale = 10, tier = 9}
     }
     
+    -- Combine special scaling based on available mods
+    local special_scaling = {}
+    for k, v in pairs(base_special_scaling) do
+        special_scaling[k] = v
+    end
+    
+    if mods["space-age"] then
+        for k, v in pairs(space_age_special_scaling) do
+            special_scaling[k] = v
+        end
+    end
+    
+    -- Apply special scaling
     for recipe_name, scaling_data in pairs(special_scaling) do
         -- Only apply if tier is enabled
         if tier_enabled[scaling_data.tier] then

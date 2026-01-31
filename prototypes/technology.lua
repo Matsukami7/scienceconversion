@@ -1,4 +1,5 @@
-data:extend({
+-- Base game technologies (always available)
+local base_technologies = {
     {
         type = "technology",
         name = "science-conversion-one",
@@ -78,7 +79,11 @@ data:extend({
             },
             time = 30
         }
-    },
+    }
+}
+
+-- Space Age technologies (only if Space Age is installed)
+local space_age_technologies = {
     {
         type = "technology",
         name = "science-conversion-five",
@@ -209,4 +214,12 @@ data:extend({
             time = 30
         }
     }
-})
+}
+
+-- Load base game technologies
+data:extend(base_technologies)
+
+-- Load Space Age technologies only if the expansion is installed
+if mods["space-age"] then
+    data:extend(space_age_technologies)
+end
