@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.5.1
+Date: 2026-07-19
+  Bugfixes:
+    - Conversion recipes no longer generate unintended Recycler recycling recipes, which could be exploited to duplicate science packs infinitely
+  Info:
+    - All conversion recipes now set auto_recycle = false
+---------------------------------------------------------------------------------------------------
 Version: 2.5.0
 Date: 2026-01-31
   Major Features:
